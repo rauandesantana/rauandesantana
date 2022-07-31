@@ -4,7 +4,6 @@ void main() {
   runApp(
     const MaterialApp(
       home: Main(),
-
     ),
   );
 }

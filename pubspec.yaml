@@ -20,9 +20,25 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+  # JoKenPo
+    - assets/projetos/jokenpo/fullscreen_historico_lista.png
+    - assets/projetos/jokenpo/fullscreen_historico_vazio.png
+    - assets/projetos/jokenpo/fullscreen_modo_adivinhe.png
+    - assets/projetos/jokenpo/fullscreen_modo_combate.png
+    - assets/projetos/jokenpo/fullscreen_pagina_nao_encontrada.png
+    - assets/projetos/jokenpo/fullscreen_resetar_dialogo.png
+    - assets/projetos/jokenpo/historico_lista.png
+    - assets/projetos/jokenpo/historico_vazio.png
+    - assets/projetos/jokenpo/modo_adivinhe_derrota.png
+    - assets/projetos/jokenpo/modo_adivinhe_inicial.png
+    - assets/projetos/jokenpo/modo_adivinhe_vitoria.png
+    - assets/projetos/jokenpo/modo_combate_derrota.png
+    - assets/projetos/jokenpo/modo_combate_empate.png
+    - assets/projetos/jokenpo/modo_combate_inicial.png
+    - assets/projetos/jokenpo/modo_combate_vitoria.png
+    - assets/projetos/jokenpo/pagina_nao_encontrada.png
+    - assets/projetos/jokenpo/resetar_dialogo.png
 
   # fonts:
   #   - family: Schyler
