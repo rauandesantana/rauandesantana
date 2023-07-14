@@ -30,6 +30,11 @@ export const Row = styled.div`
   flex: 1;
   display: flex;
   flex-flow: row nowrap;
+  height: 400px;
+    
+  ${({ flex }) => (flex !== '') && css`
+    flex: ${flex};
+  `}
 
   ${({ margin }) => (margin !== '') && css`
     margin: ${margin};
@@ -37,10 +42,6 @@ export const Row = styled.div`
 
   ${({ padding }) => (padding !== '') && css`
     padding: ${padding};
-  `}
-    
-  ${({ flex }) => (flex !== '') && css`
-    flex: ${flex};
   `}
 
   ${({ justifyContent }) => (justifyContent !== '') && css`
@@ -60,6 +61,10 @@ export const Column = styled.div`
   flex: 1;
   display: flex;
   flex-flow: column nowrap;
+    
+  ${({ flex }) => (flex !== '') && css`
+    flex: ${flex};
+  `}
 
   ${({ margin }) => (margin !== '') && css`
     margin: ${margin};
@@ -67,10 +72,6 @@ export const Column = styled.div`
 
   ${({ padding }) => (padding !== '') && css`
     padding: ${padding};
-  `}
-    
-  ${({ flex }) => (flex !== '') && css`
-    flex: ${flex};
   `}
 
   ${({ justifyContent }) => (justifyContent !== '') && css`
