@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 export const AppBarContainer = styled.div`
   width: 100%;
   height: 50px;
-  padding-left: 10%;
   
   display: flex;
   flex-flow: row nowrap;

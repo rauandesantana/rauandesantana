@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../../components/layout";
+import { Column, Container, Row } from "../../components/layout";
 import AppBar from "../../components/app-bar";
 
 const actionsAppBar = [
@@ -12,6 +12,13 @@ const Home = () => {
   return (
     <Container margin="0px 10%" justifyContent="center">
       <AppBar actions={actionsAppBar} />
+      <Row margin='0px 0px 20px 0px' >
+        <Column>
+          
+        </Column>
+        <Column>
+        </Column>
+      </Row>
     </Container>
   );
 };
