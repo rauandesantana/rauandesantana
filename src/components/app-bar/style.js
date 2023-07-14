@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 export const AppBarContainer = styled.div`
   width: 100%;
   height: 50px;
-  margin-bottom: 10px;
   padding-left: 10%;
   
   display: flex;
@@ -20,8 +19,8 @@ export const AppBarHeader = styled.div`
 `;
 
 export const AppBarLogo = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 50px;
   margin-right: 10px;
   object-fit: cover;
 
@@ -32,6 +31,8 @@ export const AppBarLogo = styled.img`
 
 export const AppBarTitle = styled.span`
   font-family: 'Neuton', serif;
+  font-size: 24px;
+  padding-bottom: 8px;
 `;
 
 export const AppBarActions = styled.div`
@@ -42,7 +43,6 @@ export const AppBarActions = styled.div`
 `;
 
 export const AppBarList = styled.ul`
-  height: 90%;
   list-style-type: none;
   overflow: hidden;
 `;
@@ -54,8 +54,14 @@ export const AppBarItem = styled.li`
 
 export const AppBarLink = styled.a`
   display: block;
-  padding: 10px 15px;
+  padding: 5px 15px 8px 15px;
   text-align: center;  
   text-decoration: none;
   font-family: 'Neuton', serif;
+  font-size: 18px;
+  border-radius: 0.7rem;
+
+  &:hover {
+    background-color: #383838;
+  }
 `;
