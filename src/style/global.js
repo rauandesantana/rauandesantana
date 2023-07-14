@@ -11,6 +11,8 @@ export default createGlobalStyle`
   }
 
   body {
+    max-width: 1800px;
+    margin: 0px auto;
     background-color: #0F0F0F;
   }
 `;
