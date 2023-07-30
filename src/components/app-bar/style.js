@@ -20,7 +20,7 @@ export const Content = styled.div`
 
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 
   ${({maxWidth}) => (maxWidth !== '') && css`
@@ -28,21 +28,17 @@ export const Content = styled.div`
   `}
 `;
 
-export const Header = styled.div`
+export const ImageLogo = styled.img`
+  height: 30px;
+`;
+
+export const ActionsContent = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 `;
 
-export const ImageLogo = styled.img`
-  width: 50px;
-  height: 50px;
-`;
-
-export const Title = styled.span`
-  font-size: 22px;
-  font-weight: 500;
-  font-family: 'Kanit', 'Roboto' sans-serif;
-  font-style: italic;
+export const ActionsListButton = styled.ul`
+  
 `;

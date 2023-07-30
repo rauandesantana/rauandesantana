@@ -3,7 +3,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=4d4d4d&size=35&center=true&vCenter=true&width=1000&lines=Olá,+Seja+Bem-Vindo(a)!;Me+chamo+Rauan+Rosa;Sou+Desenvolvedor+Full-Stack)](https://git.io/typing-svg)
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/rauan-rosa/"><img height="180" src="https://github-readme-stats.vercel.app/api?username=rauandesantana&include_all_commits=true&count_private=true&show_icons=true&theme=dracula" /><img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rauandesantana&layout=compact&langs_count=10&theme=dracula" /></a>
+  <a href="https://www.linkedin.com/in/rauan-rosa/"><img height="180" src="https://github-readme-stats.vercel.app/api?username=rauandesantana&include_all_commits=true&count_private=true&show_icons=true&theme=dracula" /><img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rauandesantana&count_private=true&layout=compact&langs_count=10&theme=dracula" /></a>
 </div>
 <br />
 <div style="display: inline_block">

@@ -1,15 +1,15 @@
-import React from 'react';
-import { Container, Content, Header, ImageLogo, Title } from './style';
+import React from "react";
+import { ActionsContent, Container, Content, ImageLogo } from "./style";
 
-
-const AppBar = ({ title, actions, disableLogo, maxWidth }) => {
+const AppBar = ({ activeSearchBar, actions, maxWidth }) => {
   return (
     <Container>
       <Content maxWidth={maxWidth}>
-        <Header>
-          {(disableLogo !== true) ? <ImageLogo src='logo192.png' /> : null}
-          <Title>{(title !== '') ? title : ''}</Title>
-        </Header>
+        <ImageLogo src='logo.png' />
+        <ActionsContent>
+          {activeSearchBar !== false ? <></> : null}
+          {actions ? actions.map((item) => <>{item.title}</>) : null}
+        </ActionsContent>
       </Content>
     </Container>
   );
