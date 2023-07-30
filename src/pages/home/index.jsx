@@ -1,24 +1,14 @@
-import React from "react";
-import { Column, Container, Row } from "../../components/layout";
-import AppBar from "../../components/app-bar";
-import { HomeImageBGCode } from "./style";
-
-const actionsAppBar = [
-  { title: "Inicio", url: "#" },
-  { title: "Projetos", url: "#" },
-  { title: "Contato", url: "#" },
-];
+import React from 'react';
+import { Container, Content } from '../../components/layout';
+import AppBar from '../../components/app-bar';
 
 const Home = () => {
   return (
-    <Container margin="0px 10%" justifyContent="center">
-      <AppBar actions={actionsAppBar} />
-      <Column>
-        <HomeImageBGCode>
-          fghdfhd
-        </HomeImageBGCode>
-
-      </Column>
+    <Container alignItems='center'>
+      <AppBar maxWidth='1300px'/>
+      <Content width='90%' maxWidth='1300px'>
+        
+      </Content>
     </Container>
   );
 };

@@ -1,66 +1,48 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const AppBarContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
-  height: 50px;
-  
+  height: 60px;
+  background-color: #121212;
+  -webkit-box-shadow: 0px 0px 25px 17px rgba(18,18,18,1);
+  -moz-box-shadow: 0px 0px 25px 17px rgba(18,18,18,1);
+  box-shadow: 0px 0px 25px 17px rgba(18,18,18,1);
+
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `;
 
-export const AppBarHeader = styled.div`
+export const Content = styled.div`
+  width: 90%;
+  height: 100%;
+
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
-`;
 
-export const AppBarLogo = styled.img`
-  width: 100px;
-  height: 50px;
-  margin-right: 10px;
-  object-fit: cover;
-
-  ${({disable}) => (disable === true) && css`
-    display: none;
+  ${({maxWidth}) => (maxWidth !== '') && css`
+    max-width: ${maxWidth};
   `}
 `;
 
-export const AppBarTitle = styled.span`
-  font-family: 'Neuton', serif;
-  font-size: 24px;
-  padding-bottom: 8px;
-`;
-
-export const AppBarActions = styled.div`
+export const Header = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `;
 
-export const AppBarList = styled.ul`
-  list-style-type: none;
-  overflow: hidden;
+export const ImageLogo = styled.img`
+  width: 50px;
+  height: 50px;
 `;
 
-export const AppBarItem = styled.li`
-  float: left;
-  margin: 0px 5px;
-`;
-
-export const AppBarLink = styled.a`
-  display: block;
-  padding: 5px 15px 8px 15px;
-  text-align: center;  
-  text-decoration: none;
-  font-family: 'Neuton', serif;
-  font-size: 18px;
-  border-radius: 0.7rem;
-
-  &:hover {
-    background-color: #383838;
-  }
+export const Title = styled.span`
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'Kanit', 'Roboto' sans-serif;
+  font-style: italic;
 `;

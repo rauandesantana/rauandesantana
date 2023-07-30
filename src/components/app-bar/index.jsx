@@ -1,34 +1,17 @@
-import React from "react";
-import {
-  AppBarActions,
-  AppBarList,
-  AppBarContainer,
-  AppBarHeader,
-  AppBarItem,
-  AppBarLink,
-  AppBarLogo,
-  AppBarTitle,
-} from "./style";
+import React from 'react';
+import { Container, Content, Header, ImageLogo, Title } from './style';
 
-const AppBar = ({ title, actions, disableLogo }) => {
+
+const AppBar = ({ title, actions, disableLogo, maxWidth }) => {
   return (
-    <AppBarContainer>
-      <AppBarHeader>
-        <AppBarLogo disable={disableLogo} src='logo192.png' alt='logo' />
-        <AppBarTitle>{(title === undefined) ? 'Rauan Rosa' : title }</AppBarTitle>
-      </AppBarHeader>
-      <AppBarActions>
-        <AppBarList>
-          {actions.map((item) => (
-            <AppBarItem>
-              <AppBarLink href={item.url}>
-                {item.title}
-              </AppBarLink>
-            </AppBarItem>
-          ))}
-        </AppBarList>
-      </AppBarActions>
-    </AppBarContainer>
+    <Container>
+      <Content maxWidth={maxWidth}>
+        <Header>
+          {(disableLogo !== true) ? <ImageLogo src='logo192.png' /> : null}
+          <Title>{(title !== '') ? title : ''}</Title>
+        </Header>
+      </Content>
+    </Container>
   );
 };
 
