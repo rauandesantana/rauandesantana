@@ -1,74 +1,32 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   flex: 1;
   display: flex;
   flex-flow: column nowrap;
 
-  ${({ margin }) => (margin !== '') && css`
-    margin: ${margin};
-  `}
-
-  ${({ padding }) => (padding !== '') && css`
-    padding: ${padding};
-  `}
-
-  ${({ justifyContent }) => (justifyContent !== '') && css`
-    justify-content: ${justifyContent};
-  `}
-
-  ${({ alignItems }) => (alignItems !== '') && css`
-    align-items: ${alignItems};
-  `}
-
-  ${({ border }) => (border !== '') && css`
-    border: ${border};
-  `}
+  margin: ${({ $margin }) => $margin};
+  padding: ${({ $padding }) => $padding};
+  justify-content: ${({ $justifyContent }) => $justifyContent};
+  align-items: ${({ $alignItems }) => $alignItems};
+  border: ${({ $border }) => $border};
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-flow: column nowrap;
 
-  ${({ width }) => (width !== '') && css`
-    width: ${width};
-  `}
-
-  ${({ height }) => (height !== '') && css`
-    height: ${height};
-  `}
-
-  ${({ maxWidth }) => (maxWidth !== '') && css`
-    max-width: ${maxWidth};
-  `}
-
-  ${({ maxHeight }) => (maxHeight !== '') && css`
-    max-height: ${maxHeight};
-  `}
-
-  ${({ minWidth }) => (minWidth !== '') && css`
-    min-width: ${minWidth};
-  `}
-
-  ${({ minHeight }) => (minHeight !== '') && css`
-    min-height: ${minHeight};
-  `}
-
-  ${({ padding }) => (padding !== '') && css`
-    padding: ${padding};
-  `}
-
-  ${({ justifyContent }) => (justifyContent !== '') && css`
-    justify-content: ${justifyContent};
-  `}
-
-  ${({ alignItems }) => (alignItems !== '') && css`
-    align-items: ${alignItems};
-  `}
-
-  ${({ border }) => (border !== '') && css`
-    border: ${border};
-  `}
+  width: ${({ $width }) => $width};
+  height: ${({ $height }) => $height};
+  max-width: ${({ $maxWidth }) => $maxWidth};
+  max-height: ${({ $maxHeight }) => $maxHeight};
+  min-width: ${({ $minWidth }) => $minWidth};
+  min-height: ${({ $minHeight }) => $minHeight};
+  margin: ${({ $margin }) => $margin};
+  padding: ${({ $padding }) => $padding};
+  justify-content: ${({ $justifyContent }) => $justifyContent};
+  align-items: ${({ $alignItems }) => $alignItems};
+  border: ${({ $border }) => $border};
 `;
 
 export const Row = styled.div`
@@ -76,30 +34,13 @@ export const Row = styled.div`
   display: flex;
   flex-flow: row nowrap;
   height: 400px;
-    
-  ${({ flex }) => (flex !== '') && css`
-    flex: ${flex};
-  `}
 
-  ${({ margin }) => (margin !== '') && css`
-    margin: ${margin};
-  `}
-
-  ${({ padding }) => (padding !== '') && css`
-    padding: ${padding};
-  `}
-
-  ${({ justifyContent }) => (justifyContent !== '') && css`
-    justify-content: ${justifyContent};
-  `}
-
-  ${({ alignItems }) => (alignItems !== '') && css`
-    align-items: ${alignItems};
-  `}
-
-  ${({ border }) => (border !== '') && css`
-    border: ${border};
-  `}
+  flex: ${({ $flex }) => $flex};
+  margin: ${({ $margin }) => $margin};
+  padding: ${({ $padding }) => $padding};
+  justify-content: ${({ $justifyContent }) => $justifyContent};
+  align-items: ${({ $alignItems }) => $alignItems};
+  border: ${({ $border }) => $border};
 `;
 
 export const Column = styled.div`
@@ -107,27 +48,10 @@ export const Column = styled.div`
   display: flex;
   flex-flow: column nowrap;
     
-  ${({ flex }) => (flex !== '') && css`
-    flex: ${flex};
-  `}
-
-  ${({ margin }) => (margin !== '') && css`
-    margin: ${margin};
-  `}
-
-  ${({ padding }) => (padding !== '') && css`
-    padding: ${padding};
-  `}
-
-  ${({ justifyContent }) => (justifyContent !== '') && css`
-    justify-content: ${justifyContent};
-  `}
-
-  ${({ alignItems }) => (alignItems !== '') && css`
-    align-items: ${alignItems};
-  `}
-
-  ${({ border }) => (border !== '') && css`
-    border: ${border};
-  `}
+  flex: ${({ $flex }) => $flex};
+  margin: ${({ $margin }) => $margin};
+  padding: ${({ $padding }) => $padding};
+  justify-content: ${({ $justifyContent }) => $justifyContent};
+  align-items: ${({ $alignItems }) => $alignItems};
+  border: ${({ $border }) => $border};
 `;

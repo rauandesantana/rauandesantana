@@ -1,14 +1,35 @@
 import React from "react";
-import { ActionsContent, Container, Content, ImageLogo } from "./style";
+import {
+  ActionsButton,
+  ActionsContent,
+  ActionsItem,
+  ActionsListButton,
+  Container,
+  Content,
+  ImageLogo,
+} from "./style";
 
-const AppBar = ({ activeSearchBar, actions, maxWidth }) => {
+const AppBar = ({ $actions, $maxWidth }) => {
   return (
     <Container>
-      <Content maxWidth={maxWidth}>
-        <ImageLogo src='logo.png' />
+      <Content $maxWidth={$maxWidth}>
+        <ImageLogo src="logo.png" />
         <ActionsContent>
-          {activeSearchBar !== false ? <></> : null}
-          {actions ? actions.map((item) => <>{item.title}</>) : null}
+          {$actions
+            ? $actions.map((item) => {
+                const status = item.status ?? "default";
+                const url = status === "default" ? item.url : null;
+                const title = item.title ?? "Null";
+
+                return (
+                  <ActionsListButton key={title.concat(url)}>
+                    <ActionsButton href={url}>
+                      <ActionsItem $status={status}>{title}</ActionsItem>
+                    </ActionsButton>
+                  </ActionsListButton>
+                );
+              })
+            : null}
         </ActionsContent>
       </Content>
     </Container>
