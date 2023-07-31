@@ -1,39 +1,56 @@
-import React from "react";
-import {
-  ActionsButton,
-  ActionsContent,
-  ActionsItem,
-  ActionsListButton,
-  Container,
-  Content,
-  ImageLogo,
-} from "./style";
+import React, { useEffect, useState } from "react";
+import { Container, Content, ImageLogo } from "./style";
 
-const AppBar = ({ $actions, $maxWidth }) => {
+import Actions from "./actions";
+import ActionsMobile from "./actions-mobile";
+
+const AppBar = ({ $actions, $maxWidth, $maxWidthResize }) => {
+  const size = ResizedAppBar();
+
   return (
     <Container>
       <Content $maxWidth={$maxWidth}>
         <ImageLogo src="logo.png" />
-        <ActionsContent>
-          {$actions
-            ? $actions.map((item) => {
-                const status = item.status ?? "default";
-                const url = status === "default" ? item.url : null;
-                const title = item.title ?? "Null";
-
-                return (
-                  <ActionsListButton key={title.concat(url)}>
-                    <ActionsButton href={url}>
-                      <ActionsItem $status={status}>{title}</ActionsItem>
-                    </ActionsButton>
-                  </ActionsListButton>
-                );
-              })
-            : null}
-        </ActionsContent>
+        {size.with < maxWidthResized($maxWidthResize) ? (
+          <ActionsMobile $actions={$actions} />
+        ) : (
+          <Actions $actions={$actions} />
+        )}
       </Content>
     </Container>
   );
 };
+
+function maxWidthResized(maxWidthResize) {
+  const regex = /(\d+)/gm;
+  const value = maxWidthResize.toString();
+
+  if (regex.test(value)) {
+    const m = value.match(regex);
+    if (m.length > 1) return 0;
+    return m[0];
+  } else {
+    return 0;
+  }
+}
+
+function ResizedAppBar() {
+  const [sizeWindow, setSizeWindow] = useState({
+    with: window.innerWidth ?? undefined,
+    height: window.innerHeight ?? undefined,
+  });
+
+  useEffect(() => {
+    const resizedScreen = () =>
+      setSizeWindow({
+        with: window.innerWidth ?? undefined,
+        height: window.innerHeight ?? undefined,
+      });
+    window.addEventListener("resize", resizedScreen);
+    return () => window.removeEventListener("resize", resizedScreen);
+  }, []);
+
+  return sizeWindow;
+}
 
 export default AppBar;
