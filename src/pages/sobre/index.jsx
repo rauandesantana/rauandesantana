@@ -3,14 +3,14 @@ import { Container, Content } from "../../components/layout";
 import AppBar from "../../components/app-bar";
 
 const actions = [
-  { title: "Inicio", url: "/", status: "selected" },
-  { title: "Sobre mim", url: "/about-me" },
+  { title: "Inicio", url: "/" },
+  { title: "Sobre mim", url: "/about-me", status: "selected" },
   { title: "Projetos", url: "/projects" },
   { title: "Contato", url: "/contact" },
   { title: "Configurações", url: "/config" },
 ];
 
-const PageHome = () => {
+const PageAboutMe = () => {
   return (
     <Container $alignItems="center">
       <AppBar $maxWidth="1300px" $maxWidthResize="650px" $actions={actions} />
@@ -19,4 +19,4 @@ const PageHome = () => {
   );
 };
 
-export default PageHome;
+export default PageAboutMe;
