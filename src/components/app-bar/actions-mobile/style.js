@@ -30,12 +30,11 @@ export const ActionsContainer = styled.div`
   top: 58px;
   right: 0px;
   z-index: 1000;
-  background-color: #121212;
+  background-color: #000;
   border-bottom-left-radius: 0.5rem;
-
-  -webkit-box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 5px 13px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -3px 10px 13px 5px rgba(10,10,10,0.75);
+  -moz-box-shadow: -3px 10px 13px 5px rgba(10,10,10,0.75);
+  box-shadow: -3px 10px 13px 5px rgba(10,10,10,0.75);
 
   display: ${({ $showActions }) => ($showActions === true) ? 'block' : 'none'};
 `;

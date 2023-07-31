@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 60px;
-  background-color: #121212;
-  -webkit-box-shadow: 0px 0px 25px 17px rgba(18,18,18,1);
-  -moz-box-shadow: 0px 0px 25px 17px rgba(18,18,18,1);
-  box-shadow: 0px 0px 25px 17px rgba(18,18,18,1);
+  background-color: #000;
+  -webkit-box-shadow: 0px 10px 19px 5px rgba(5,5,5,1);
+  -moz-box-shadow: 0px 10px 19px 5px rgba(5,5,5,1);
+  box-shadow: 0px 10px 19px 5px rgba(5,5,5,1);
 
   display: flex;
   flex-flow: row nowrap;
