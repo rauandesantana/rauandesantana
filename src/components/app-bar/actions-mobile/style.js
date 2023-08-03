@@ -21,6 +21,8 @@ export const ButtonShowActions = styled.button`
   font-feature-settings: "liga";
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+
+  visibility: ${({$visible}) => ($visible === false) ? 'hidden' : 'visible' };
 `;
 
 export const ActionsContainer = styled.div`

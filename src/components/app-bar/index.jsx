@@ -1,56 +1,100 @@
-import React, { useEffect, useState } from "react";
-import { Container, Content, ImageLogo } from "./style";
+import React, { useEffect, useRef, useState } from "react";
+import { Container, ContainerLogo, Content, ImageLogo } from "./style";
 
 import Actions from "./actions";
 import ActionsMobile from "./actions-mobile";
 
-const AppBar = ({ $actions, $maxWidth, $maxWidthResize }) => {
-  const size = ResizedAppBar();
+const AppBar = ({ $actions, $maxWidth }) => {
+  const state = StateAppBar();
 
   return (
     <Container>
       <Content $maxWidth={$maxWidth}>
-        <ImageLogo src="logo.png" />
-        {size.with < maxWidthResized($maxWidthResize) ? (
-          <ActionsMobile $actions={$actions} />
+        <ContainerLogo ref={state.logoRef}>
+          <ImageLogo />
+        </ContainerLogo>
+        {state.mobileMode === true ? (
+          <ActionsMobile
+            $ref={state.actionsRef}
+            $visible={state.mobileMode === undefined ? false : true}
+            $actions={$actions}
+          />
         ) : (
-          <Actions $actions={$actions} />
+          <Actions
+            $ref={state.actionsRef}
+            $visible={state.mobileMode === undefined ? false : true}
+            $actions={$actions}
+          />
         )}
       </Content>
     </Container>
   );
 };
 
-function maxWidthResized(maxWidthResize) {
-  const regex = /(\d+)/gm;
-  const value = maxWidthResize.toString();
+function StateAppBar() {
+  const logoRef = useRef();
+  const actionsRef = useRef();
+  const logoWidth = useRef(undefined);
+  const actionsWidth = useRef(undefined);
 
-  if (regex.test(value)) {
-    const m = value.match(regex);
-    if (m.length > 1) return 0;
-    return m[0];
-  } else {
-    return 0;
-  }
-}
-
-function ResizedAppBar() {
-  const [sizeWindow, setSizeWindow] = useState({
-    with: window.innerWidth ?? undefined,
-    height: window.innerHeight ?? undefined,
+  const [state, setState] = useState({
+    logoRef: logoRef,
+    actionsRef: actionsRef,
+    windowSize: { with: undefined, height: undefined },
+    logoSize: { with: undefined, height: undefined },
+    actionsSize: { with: undefined, height: undefined },
+    mobileMode: undefined,
   });
 
+  const resizedAppBar = () => {
+    const windowWidth = window.innerWidth;
+    let result = false;
+
+    if (isNaN(windowWidth)) {
+      result = true;
+    } else {
+      const logoInit = logoWidth.current === undefined;
+      const actionsInit = actionsWidth.current === undefined;
+
+      if (logoInit) logoWidth.current = logoRef.current?.offsetWidth;
+      if (actionsInit) actionsWidth.current = actionsRef.current?.offsetWidth;
+
+      if (isNaN(logoWidth.current) || isNaN(actionsWidth.current)) {
+        result = true;
+      } else {
+        const limitWidth = windowWidth * 0.9 - 50;
+        const contentWidth = logoWidth.current + actionsWidth.current;
+        result = limitWidth - contentWidth < 0;
+      }
+    }
+
+    setState((prevState) => {
+      return {
+        ...prevState,
+        windowSize: {
+          with: window.innerWidth ?? undefined,
+          height: window.innerHeight ?? undefined,
+        },
+        logoSize: {
+          with: logoRef.current?.offsetWidth ?? undefined,
+          height: logoRef.current?.offsetHeight ?? undefined,
+        },
+        actionsSize: {
+          with: actionsRef.current?.offsetWidth ?? undefined,
+          height: actionsRef.current?.offsetHeight ?? undefined,
+        },
+        mobileMode: result,
+      };
+    });
+  };
+
   useEffect(() => {
-    const resizedScreen = () =>
-      setSizeWindow({
-        with: window.innerWidth ?? undefined,
-        height: window.innerHeight ?? undefined,
-      });
-    window.addEventListener("resize", resizedScreen);
-    return () => window.removeEventListener("resize", resizedScreen);
+    resizedAppBar();
+    window.addEventListener("resize", resizedAppBar);
+    return () => window.removeEventListener("resize", resizedAppBar);
   }, []);
 
-  return sizeWindow;
+  return state;
 }
 
 export default AppBar;

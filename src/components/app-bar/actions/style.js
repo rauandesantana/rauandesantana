@@ -5,6 +5,8 @@ export const ActionsContent = styled.div`
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
+  
+  visibility: ${({$visible}) => ($visible === false) ? 'hidden' : 'visible' };
 `;
 
 export const ActionsListButton = styled.ul`
@@ -12,7 +14,9 @@ export const ActionsListButton = styled.ul`
   overflow: hidden;
 `;
 
-export const ActionsButton = styled.a``;
+export const ActionsButton = styled.a`
+  white-space: nowrap;
+`;
 
 export const ActionsItem = styled.li`
   float: left;

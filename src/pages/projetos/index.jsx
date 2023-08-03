@@ -13,7 +13,7 @@ const actions = [
 const PageProjects = () => {
   return (
     <Container $alignItems="center">
-      <AppBar $maxWidth="1300px" $maxWidthResize="650px" $actions={actions} />
+      <AppBar $maxWidth="1300px" $actions={actions} />
       <Content $width="90%" $maxWidth="1300px"></Content>
     </Container>
   );

@@ -6,9 +6,9 @@ import {
   ActionsListButton,
 } from "./style";
 
-const Actions = ({ $actions }) => {
+const Actions = ({ $actions, $ref, $visible }) => {
   return (
-    <ActionsContent>
+    <ActionsContent $visible={$visible} ref={$ref}>
       {$actions
         ? $actions.map((item) => {
             const status = item.status ?? "default";

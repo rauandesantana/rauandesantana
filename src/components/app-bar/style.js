@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { ReactComponent as LogoSVG } from './logo.svg';
 
 export const Container = styled.div`
   width: 100%;
@@ -25,6 +26,35 @@ export const Content = styled.div`
   align-items: center;
 `;
 
-export const ImageLogo = styled.img`
+export const ContainerLogo = styled.div`
+  width: 165px;
   height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const effectGradient = keyframes`
+  0% {
+    fill: #fff;
+    background-position: 0% 50%;
+  }
+  50% {
+    fill: #878787;
+    background-position: 100% 50%;
+  }
+  100% {
+    fill: #fff;
+    background-position: 0% 50%;
+  }
+`;
+
+export const ImageLogo = styled(LogoSVG)`
+  width: 100%;
+  height: 100%;
+
+  animation: ${effectGradient} 5s linear infinite;
+  fill: #fff;
+  overflow: hidden;
 `;
