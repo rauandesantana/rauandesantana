@@ -1,20 +1,7 @@
 import React from "react";
-import { Container, Content } from "../../components/layout";
-import AppBar from "../../components/app-bar";
 
-const actions = [
-  { title: "Inicio", url: "/" },
-  { title: "Projetos", url: "/projects" },
-  { title: "Contato", url: "/contact", status: "selected" },
-];
-
-const PageContact = () => {
-  return (
-    <Container $alignItems="center">
-      <AppBar $actions={actions} />
-      <Content $width="90%"></Content>
-    </Container>
-  );
+const ContactPage = () => {
+  return <></>;
 };
 
-export default PageContact;
+export default ContactPage;

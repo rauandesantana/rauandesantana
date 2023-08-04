@@ -4,7 +4,7 @@ import { ReactComponent as LogoSVG } from './logo.svg';
 export const Container = styled.div`
   width: 100%;
   height: 60px;
-  position: sticky;
+  position: fixed;
   top: 0px;
   background-color: #000;
   -webkit-box-shadow: 0px 10px 19px 5px rgba(5,5,5,1);
@@ -20,8 +20,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   width: 90%;
-  max-width: ${({ $maxWidth }) => $maxWidth ?? '1300px'};
   height: 100%;
+  max-width: ${({ $maxWidth }) => $maxWidth ?? '1300px'};
 
   display: flex;
   flex-flow: row nowrap;

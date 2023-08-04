@@ -29,7 +29,7 @@ export const ActionsItem = styled.li`
   font-weight: 500;
 
   ${({ $status }) => (($status === 'gone') && css`
-
+  
     display: none;
 
   `) || (($status === 'disabled') && css`

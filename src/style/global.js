@@ -13,8 +13,19 @@ export default createGlobalStyle`
   }
 
   body {
-    max-width: 2000px;
-    margin: 0px auto;
+    width: 100%;
+    height: 100vh;
     background-color: #1c1c1c;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column nowrap;
   }
 `;

@@ -1,22 +1,13 @@
 import React from "react";
-import { Container, Content } from "../../components/layout";
-import AppBar from "../../components/app-bar";
+import Banner from "../../components/banner";
+import { Container } from "./style";
 
-const actions = [
-  { title: "Inicio", url: "/", status: "selected" },
-  { title: "Projetos", url: "/projects" },
-  { title: "Contato", url: "/contact" },
-];
-
-const PageHome = () => {
+const HomePage = () => {
   return (
-    <Container $alignItems="center">
-      <AppBar $actions={actions} />
-      <Content $width="90%">
-        
-      </Content>
+    <Container>
+      <Banner />
     </Container>
   );
 };
 
-export default PageHome;
+export default HomePage;

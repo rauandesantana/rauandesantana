@@ -1,17 +1,43 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import AppBar from "./components/app-bar";
 
-import Home from "./pages/home";
-import PageContact from "./pages/contato";
-import PageProjects from "./pages/projetos";
+import HomePage from "./pages/home";
+import ContactPage from "./pages/contato";
+import ProjectsPage from "./pages/projetos";
+
+const routes = [
+  {
+    title: "Inicio",
+    appBarButton: true,
+    element: <HomePage />,
+    path: "/",
+    status: null, // default, selected, disabled, gone
+  },
+  {
+    title: "Projetos",
+    appBarButton: true,
+    element: <ProjectsPage />,
+    path: "/projects",
+    status: null, // default, selected, disabled, gone
+  },
+  {
+    title: "Contato",
+    appBarButton: true,
+    element: <ContactPage />,
+    path: "/contact",
+    status: null, // default, selected, disabled, gone
+  },
+];
 
 const App = () => {
   return (
     <BrowserRouter>
+      <AppBar $actions={routes.map((route) => (route.appBarButton) ? route : null)} />
       <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<PageProjects />} path="/projects" />
-        <Route element={<PageContact />} path="/contact" />
+        {routes.map((route) => (
+          <Route key={route.title.concat(route.path)} element={route.element} path={route.path} />
+        ))}
       </Routes>
     </BrowserRouter>
   );

@@ -28,12 +28,13 @@ const ActionsMobile = ({ $actions, $ref, $visible }) => {
         <ActionsContent>
           {$actions
             ? $actions.map((item) => {
-                const status = item.status ?? "default";
-                const url = status === "default" ? item.url : null;
-                const title = item.title ?? "Null";
+              const path = item.path;
+              const status = item.status ?? (path === window.location.pathname) ? 'selected' : 'default';
+              const url = status === "default" ? path : null;
+              const title = item.title ?? "Null";
 
                 return (
-                  <ActionsListButton key={title.concat(url)}>
+                  <ActionsListButton key={title.concat(path)}>
                     <ActionsButton href={url}>
                       <ActionsItem $status={status}>{title}</ActionsItem>
                     </ActionsButton>

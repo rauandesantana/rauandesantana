@@ -50,7 +50,7 @@ function StateAppBar() {
     const windowWidth = window.innerWidth;
     let result = false;
 
-    if (isNaN(windowWidth)) {
+    if (isNaN(windowWidth) || window.screen.width < 720) {
       result = true;
     } else {
       const logoInit = logoWidth.current === undefined;
