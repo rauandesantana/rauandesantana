@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { buttonDefaultEffect, buttonHoverEffect, buttonSelectedEffect } from '../../../animation/gradient-app-bar'
 
 export const ActionsContent = styled.div`
   display: flex;
@@ -6,7 +7,7 @@ export const ActionsContent = styled.div`
   justify-content: flex-end;
   align-items: center;
   
-  visibility: ${({$visible}) => ($visible === false) ? 'hidden' : 'visible' };
+  visibility: ${({ $visible }) => ($visible === false) ? 'hidden' : 'visible'};
 `;
 
 export const ActionsListButton = styled.ul`
@@ -18,15 +19,18 @@ export const ActionsButton = styled.a`
   white-space: nowrap;
 `;
 
+
 export const ActionsItem = styled.li`
   float: left;
   margin: 0px 5px;
-  padding: 8px 15px;
-  text-align: center;
-  border-radius: 0.5rem;
+  padding: 2px 20px;
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
+  font-family: 'Teko';
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 1rem;
 
   ${({ $status }) => (($status === 'gone') && css`
   
@@ -35,21 +39,31 @@ export const ActionsItem = styled.li`
   `) || (($status === 'disabled') && css`
 
     display: flex;
-    background-color: #1f1f1f;
+    color: #000;
+    opacity: 0.3;
+    animation: ${buttonSelectedEffect} 5s linear infinite;
     cursor: default;
 
   `) || (($status === 'selected') && css`
 
     display: flex;
-    background-color: grey;
+    color: #000;
     cursor: default;
+    animation: ${buttonSelectedEffect} 5s linear infinite;
 
   `) || (($status === 'default') && css`
 
     display: flex;
+    animation: ${buttonDefaultEffect} 5s linear infinite;
     cursor: pointer;
-    &:hover { background-color: #383838; }
-    &:active { background-color: #4a4a4a; }
+
+    &:hover { 
+      animation: ${buttonHoverEffect} 5s linear infinite;
+    }
+
+    &:active { 
+      animation: ${buttonSelectedEffect} 5s linear infinite; 
+    }
     
   `)
   }

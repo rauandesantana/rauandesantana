@@ -12,7 +12,12 @@ const Actions = ({ $actions, $ref, $visible }) => {
       {$actions
         ? $actions.map((item) => {
             const path = item.path;
-            const status = item.status ?? (path === window.location.pathname) ? 'selected' : 'default';
+            const status =
+              item.status == null
+                ? path === window.location.pathname
+                  ? "selected"
+                  : "default"
+                : item.status;
             const url = status === "default" ? path : null;
             const title = item.title ?? "Null";
 

@@ -15,12 +15,14 @@ export default createGlobalStyle`
   body {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     background-color: #1c1c1c;
   }
 
   #root {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     padding-top: 60px;
 
     display: flex;

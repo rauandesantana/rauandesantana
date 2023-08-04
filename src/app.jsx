@@ -5,6 +5,7 @@ import AppBar from "./components/app-bar";
 import HomePage from "./pages/home";
 import ContactPage from "./pages/contato";
 import ProjectsPage from "./pages/projetos";
+import { ScrollBox } from "./components/widgets";
 
 const routes = [
   {
@@ -33,12 +34,20 @@ const routes = [
 const App = () => {
   return (
     <BrowserRouter>
-      <AppBar $actions={routes.map((route) => (route.appBarButton) ? route : null)} />
-      <Routes>
-        {routes.map((route) => (
-          <Route key={route.title.concat(route.path)} element={route.element} path={route.path} />
-        ))}
-      </Routes>
+      <AppBar
+        $actions={routes.map((route) => (route.appBarButton ? route : null))}
+      />
+      <ScrollBox>
+        <Routes>
+          {routes.map((route) => (
+            <Route
+              key={route.title.concat(route.path)}
+              element={route.element}
+              path={route.path}
+            />
+          ))}
+        </Routes>
+      </ScrollBox>
     </BrowserRouter>
   );
 };
