@@ -12,9 +12,7 @@ const PageProjects = () => {
   return (
     <Container $alignItems="center">
       <AppBar $actions={actions} />
-      <Content $width="90%">
-        
-      </Content>
+      <Content $width="90%"></Content>
     </Container>
   );
 };

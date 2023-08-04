@@ -17,7 +17,13 @@ const ActionsMobile = ({ $actions, $ref, $visible }) => {
 
   return (
     <>
-      <ButtonShowActions ref={$ref} $visible={$visible} onClick={handleShowActions}>Menu</ButtonShowActions>
+      <ButtonShowActions
+        ref={$ref}
+        $visible={$visible}
+        onClick={handleShowActions}
+      >
+        Menu
+      </ButtonShowActions>
       <ActionsContainer $showActions={showActions}>
         <ActionsContent>
           {$actions
